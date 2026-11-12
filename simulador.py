@@ -50,3 +50,8 @@ class SimuladorDisco:
     def mostrar_mapa(self):
         mapa = "".join(["[O]" if b else "[L]" for b in self.bloques])
         print("\nMapa del Disco (Primeros bloques):", mapa)
+
+    def calcular_metricas(self):
+        # Desafío 1: reporte de métricas del almacenamiento
+        print("\n--- Métricas del disco ---")
+        print(f"Total de bloques: {self.total_bloques}")
