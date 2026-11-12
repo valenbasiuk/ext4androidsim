@@ -66,3 +66,10 @@ class SimuladorDisco:
         print(f"Total de bloques: {self.total_bloques}")
         print(f"Bloques ocupados: {ocupados}")
         print(f"Bloques libres: {libres}")
+
+        # Ocupación (%) = (Bloques Ocupados / Total de Bloques) x 100
+        if self.total_bloques > 0:
+            ocupacion = (ocupados / self.total_bloques) * 100
+        else:
+            ocupacion = 0  # Disco sin bloques: se evita dividir por cero
+        print(f"Porcentaje de ocupación: {ocupacion:.2f}%")
