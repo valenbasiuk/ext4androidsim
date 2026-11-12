@@ -92,11 +92,15 @@ class SimuladorDisco:
                 hueco_actual = 0
 
         # Aplicar la fórmula de fragmentación externa
-                if total_libres == 0:
-                    fragmentacion = 0.0  # Si no hay espacio libre, la fragmentación es 0%
-                else:
-                    fragmentacion = (1 - (max_hueco / total_libres)) * 100
+        if total_libres == 0:
+            fragmentacion = 0.0  # Si no hay espacio libre, la fragmentación es 0%
+        else:
+            fragmentacion = (1 - (max_hueco / total_libres)) * 100
         
-                
+        # Imprimir los resultados
+        print("\n --- Análisis de Fragmentación --- ")
+        print(f"Mayor hueco contiguo libre: {max_hueco}")
+        print(f"Total de bloques libres: {total_libres}")
+        print(f"Fragmentación Externa: {fragmentacion:.2f}%")
         
         return fragmentacion
