@@ -73,3 +73,24 @@ class SimuladorDisco:
         else:
             ocupacion = 0  # Disco sin bloques: se evita dividir por cero
         print(f"Porcentaje de ocupación: {ocupacion:.2f}%")
+
+    def calcular_fragmentacion_externa(self):
+        max_hueco = 0
+        hueco_actual = 0
+        total_libres = 0
+
+        # Recorrer los bloques para encontrar el mayor hueco contiguo y el total de libres
+        for b in self.bloques:
+            if b is None:
+                hueco_actual += 1
+                total_libres += 1
+                # Actualizamos el hueco máximo si el actual lo supera
+                if hueco_actual > max_hueco:
+                    max_hueco = hueco_actual
+            else:
+                # Si encontramos un bloque ocupado, se corta la secuencia (hueco) actual
+                hueco_actual = 0
+
+        
+        
+        return fragmentacion
