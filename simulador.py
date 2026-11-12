@@ -54,4 +54,15 @@ class SimuladorDisco:
     def calcular_metricas(self):
         # Desafío 1: reporte de métricas del almacenamiento
         print("\n--- Métricas del disco ---")
+        # Recorrer el disco: None = libre, cualquier otro valor = ocupado
+        ocupados = 0
+        libres = 0
+        for b in self.bloques:
+            if b is None:
+                libres += 1
+            else:
+                ocupados += 1
+
         print(f"Total de bloques: {self.total_bloques}")
+        print(f"Bloques ocupados: {ocupados}")
+        print(f"Bloques libres: {libres}")
