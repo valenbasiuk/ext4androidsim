@@ -141,6 +141,27 @@ def pedir_tamano():
         return None
     return int(valor)
 
+def ejecutar_caso_prueba():
+    print("\n=======================================")
+    print("   EJECUTANDO CASO DE PRUEBA PRÁCTICO")
+    print("=======================================")
+    
+    disco = SimuladorDisco(64)
+    
+    print("\nPaso 1: Crear docA.txt, docB.txt y docC.txt (4 bloques c/u)")
+    disco.crear_archivo("docA.txt", 4)
+    disco.crear_archivo("docB.txt", 4)
+    disco.crear_archivo("docC.txt", 4)
+    
+    print("\nPaso 2: Eliminar docB.txt")
+    disco.eliminar_archivo("docB.txt")
+    
+    print("\nPaso 3: Crear docD.txt (6 bloques)")
+    disco.crear_archivo("docD.txt", 6)
+    
+    disco.mostrar_mapa()
+    mostrar_tabla_inodos(disco)
+    mostrar_metricas(disco)
 
 def menu():
     disco = SimuladorDisco(64)
@@ -154,6 +175,7 @@ def menu():
         print("3. Ver mapa de bloques")
         print("4. Ver tabla de Inodos y métricas")
         print("5. Salir")
+        print("6. Ejecutar Caso de Prueba Automático")
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
@@ -181,6 +203,8 @@ def menu():
         elif opcion == "5":
             print("Saliendo del simulador...")
             break
+        elif opcion == "6":
+            ejecutar_caso_prueba()
 
         else:
             print("Opción inválida. Ingrese un número del 1 al 5.")
